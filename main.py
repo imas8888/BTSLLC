@@ -9,5 +9,5 @@ from joblib import load
 model = load('LLC.pkl')
 
 for line in sys.stdin:
-    inputD = np.array([float(i) for i in line.split(",")]).reshape(1,-1)
+    inputD = np.array([float(i) for i in line.split(",")])[-50:].reshape(1,-1)
     print(int(model.predict(inputD)[0]))
